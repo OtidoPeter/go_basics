@@ -7,7 +7,8 @@ import (
 
 func main() {
 	const inflationRate = 6.5
-	investmentAmount, years, expectedReturnRate := 1000.0, 10.0, 5.5
+	var investmentAmount float64
+	years, expectedReturnRate := 10.0, 5.5
 
 	fmt.Scan(&investmentAmount) // Gets the user input
 
