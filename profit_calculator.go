@@ -10,16 +10,16 @@ func main() {
 	var expenses float64
 
 	// fmt.Print("Revenue: ")
-	outputNum("Revenue: ")
-	fmt.Scan(&revenue)
+	revenue = outputNum("Revenue: ")
+	// fmt.Scan(&revenue)
 
 	// fmt.Print("Expenses: ")
-	outputNum("Expenses: ")
-	fmt.Scan(&expenses)
+	expenses = outputNum("Expenses: ")
+	// fmt.Scan(&expenses)
 
 	// fmt.Print("Tax rate: ")
-	outputNum("Tax rate: ")
-	fmt.Scan(&taxRate)
+	taxRate = outputNum("Tax rate: ")
+	// fmt.Scan(&taxRate)
 
 	earningsBeforeTax, earningsAfterTax, ratio := calculateEarnings(revenue, expenses, taxRate)
 	// earningsAfterTax := (earningsBeforeTax) * (1 - taxRate/100)
@@ -33,9 +33,11 @@ func main() {
 	// fmt.Println(ratio)
 }
 
-func outputNum(num string) {
+func outputNum(num string) float64 {
+	var userInput float64
 	fmt.Print(num)
-
+	fmt.Scan(&userInput)
+	return userInput
 }
 
 func calculateEarnings(revenue, expenses, taxRate float64) (ebt float64, eat float64, rat float64) {
