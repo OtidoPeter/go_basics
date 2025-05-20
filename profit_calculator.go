@@ -5,23 +5,31 @@ import (
 )
 
 func main() {
-	var revenue int
-	var expenses int
+	var revenue float64
+	var expenses float64
 	var taxRate float64
 
-	fmt.Print("Revenue: ")
+	// fmt.Print("Revenue: ")
+	outputNum("Revenue: ")
 	fmt.Scan(&revenue)
 
-	fmt.Print("Expenses: ")
+	// fmt.Print("Expenses: ")
+	outputNum("Expenses: ")
 	fmt.Scan(&expenses)
 
-	fmt.Print("Tax rate: ")
+	// fmt.Print("Tax rate: ")
+	outputNum("Tax rate: ")
 	fmt.Scan(&taxRate)
 
 	earningsBeforeTax := revenue - expenses
-	earningsAfterTax := float64(earningsBeforeTax) * (1 - taxRate/100)
-	ratio := (float64(earningsBeforeTax) / earningsAfterTax)
+	earningsAfterTax := (earningsBeforeTax) * (1 - taxRate/100)
+	ratio := earningsBeforeTax / earningsAfterTax
 	fmt.Println(earningsBeforeTax)
 	fmt.Println(earningsAfterTax)
 	fmt.Println(ratio)
+}
+
+func outputNum(num string) {
+	fmt.Print(num)
+
 }
